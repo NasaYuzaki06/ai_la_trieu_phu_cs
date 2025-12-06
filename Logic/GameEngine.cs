@@ -2,9 +2,11 @@
 using ai_la_trieu_phu.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ai_la_trieu_phu.Logic
 {
@@ -219,6 +221,24 @@ namespace ai_la_trieu_phu.Logic
         public void deleteRankBoardData()
         {
             playerRepository.deleteData();
+        }
+
+        public void importDataFromFile()
+        {
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+
+            // SỬA DÒNG NÀY: Thêm chữ "File" vào đường dẫn
+            // Code cũ: Path.Combine(baseDir, "Assets", "questions.txt");
+            string filePath = Path.Combine(baseDir, "Assets", "File", "questions.txt");
+
+            // Debug: In đường dẫn ra để kiểm tra
+            if (!File.Exists(filePath))
+            {
+                MessageBox.Show("Code đang tìm file tại đây mà không thấy:\n" + filePath);
+                return;
+            }
+
+            dataImporter.ImportFromTextFile(filePath);
         }
     }
 }

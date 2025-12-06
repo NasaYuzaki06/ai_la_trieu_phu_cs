@@ -12,7 +12,7 @@ namespace ai_la_trieu_phu.Data
     {
         public static string GetConnectionString()
         {
-            return ConfigurationManager.ConnectionStrings["Myconnect"].ConnectionString;
+            return ConfigurationManager.ConnectionStrings["MyConnect"].ConnectionString;
         }
 
         public static SqlConnection GetConnection()

@@ -112,5 +112,12 @@ namespace ai_la_trieu_phu.Data
             }
             return null;
         }
+
+        public void checkQuestionList()
+        {
+            Console.WriteLine("Questions level 5 remaining: " + questionsWithDifficultyLevel5.Count);
+            Console.WriteLine("Questions level 10 remaining: " + questionsWithDifficultyLevel10.Count);
+            Console.WriteLine("Questions level 15 remaining: " + questionsWithDifficultyLevel15.Count);
+        }
     }
 }

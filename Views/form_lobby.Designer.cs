@@ -34,6 +34,7 @@
             this.btnShowRanking = new ai_la_trieu_phu.CustomToolBox.RoundedButton();
             this.btnRule = new ai_la_trieu_phu.CustomToolBox.RoundedButton();
             this.btnStartGame = new ai_la_trieu_phu.CustomToolBox.RoundedButton();
+            this.btnLoadQuestion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnExit
@@ -131,6 +132,19 @@
             this.btnStartGame.UseVisualStyleBackColor = false;
             this.btnStartGame.Click += new System.EventHandler(this.btnStartGame_Click);
             // 
+            // btnLoadQuestion
+            // 
+            this.btnLoadQuestion.BackColor = System.Drawing.Color.Transparent;
+            this.btnLoadQuestion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLoadQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoadQuestion.Location = new System.Drawing.Point(12, 719);
+            this.btnLoadQuestion.Name = "btnLoadQuestion";
+            this.btnLoadQuestion.Size = new System.Drawing.Size(84, 30);
+            this.btnLoadQuestion.TabIndex = 25;
+            this.btnLoadQuestion.Text = "Nạp câu hỏi";
+            this.btnLoadQuestion.UseVisualStyleBackColor = false;
+            this.btnLoadQuestion.Click += new System.EventHandler(this.btnLoadQuestion_Click);
+            // 
             // form_lobby
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -138,6 +152,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 761);
+            this.Controls.Add(this.btnLoadQuestion);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnSetting);
             this.Controls.Add(this.btnShowRanking);
@@ -158,6 +173,7 @@
         private CustomToolBox.RoundedButton btnShowRanking;
         private CustomToolBox.RoundedButton btnSetting;
         private CustomToolBox.RoundedButton btnExit;
+        private System.Windows.Forms.Button btnLoadQuestion;
     }
 }
 

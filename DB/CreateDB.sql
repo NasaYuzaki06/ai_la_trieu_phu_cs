@@ -1,0 +1,97 @@
+﻿SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Question](
+	[QuestionID] [int] IDENTITY(1,1) NOT NULL,
+	[Content] [nvarchar](max) NOT NULL,
+	[DifficultyLevel] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[QuestionID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Answer](
+	[AnswerID] [int] IDENTITY(1,1) NOT NULL,
+	[QuestionID] [int] NOT NULL,
+	[Content] [nvarchar](max) NOT NULL,
+	[IsCorrect] [bit] NOT NULL,
+	[OptionIdentifier] [char](1) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[AnswerID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Answer] ADD  DEFAULT ((0)) FOR [IsCorrect]
+GO
+
+ALTER TABLE [dbo].[Answer]  WITH CHECK ADD  CONSTRAINT [FK_Answers_Questions] FOREIGN KEY([QuestionID])
+REFERENCES [dbo].[Question] ([QuestionID])
+ON DELETE CASCADE
+GO
+
+CREATE TABLE [dbo].[PrizeLevel](
+	[LevelId] [int] NOT NULL,
+	[PrizeAmount] [bigint] NOT NULL,
+	[IsSafeHaven] [bit] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[LevelId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[PrizeLevel] ADD  DEFAULT ((0)) FOR [IsSafeHaven]
+GO
+
+CREATE TABLE [dbo].[Player](
+	[PlayerId] [int] IDENTITY(1,1) NOT NULL,
+	[PlayerName] [nvarchar](100) NOT NULL,
+	[JoinDate] [datetime] NULL,
+	[CurrentPrize] [bigint] NULL,
+	[CurrentLevel] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[PlayerId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[BoardRanking](
+	[RankId] [int] IDENTITY(1,1) NOT NULL,
+	[PlayerId] [int] NOT NULL,
+	[PlayerName] [nvarchar](100) NOT NULL,
+	[PlayDate] [datetime] NULL,
+	[HighestLevel] [int] NOT NULL,
+	[TotalPrize] [bigint] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[RankId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+INSERT INTO PrizeLevel (LevelID, PrizeAmount, IsSafeHaven) VALUES 
+(1, 200000, 0),       -- Khởi động
+(2, 400000, 0),
+(3, 600000, 0),
+(4, 1000000, 0),
+(5, 2000000, 1),      -- Mốc quan trọng 1
+
+(6, 3000000, 0),
+(7, 6000000, 0),
+(8, 10000000, 0),
+(9, 14000000, 0),
+(10, 22000000, 1),    -- Mốc quan trọng 2
+
+(11, 30000000, 0),
+(12, 40000000, 0),
+(13, 60000000, 0),
+(14, 85000000, 0),
+(15, 150000000, 1);   -- ĐỈNH CAO (Mốc quan trọng 3)

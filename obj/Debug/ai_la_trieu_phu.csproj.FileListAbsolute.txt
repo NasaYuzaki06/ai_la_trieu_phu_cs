@@ -1,0 +1,16 @@
+D:\project_dotNet\ai_la_trieu_phu\ai_la_trieu_phu\bin\Debug\ai_la_trieu_phu.exe.config
+D:\project_dotNet\ai_la_trieu_phu\ai_la_trieu_phu\bin\Debug\ai_la_trieu_phu.exe
+D:\project_dotNet\ai_la_trieu_phu\ai_la_trieu_phu\bin\Debug\ai_la_trieu_phu.pdb
+D:\project_dotNet\ai_la_trieu_phu\ai_la_trieu_phu\obj\Debug\ai_la_trieu_phu.csproj.AssemblyReference.cache
+D:\project_dotNet\ai_la_trieu_phu\ai_la_trieu_phu\obj\Debug\ai_la_trieu_phu.Properties.Resources.resources
+D:\project_dotNet\ai_la_trieu_phu\ai_la_trieu_phu\obj\Debug\ai_la_trieu_phu.csproj.GenerateResource.cache
+D:\project_dotNet\ai_la_trieu_phu\ai_la_trieu_phu\obj\Debug\ai_la_trieu_phu.csproj.CoreCompileInputs.cache
+D:\project_dotNet\ai_la_trieu_phu\ai_la_trieu_phu\obj\Debug\ai_la_trieu_phu.exe
+D:\project_dotNet\ai_la_trieu_phu\ai_la_trieu_phu\obj\Debug\ai_la_trieu_phu.pdb
+D:\project_dotNet\ai_la_trieu_phu\ai_la_trieu_phu\obj\Debug\ai_la_trieu_phu.form_lobby.resources
+D:\project_dotNet\ai_la_trieu_phu\ai_la_trieu_phu\obj\Debug\ai_la_trieu_phu.Views.form_main.resources
+D:\project_dotNet\ai_la_trieu_phu\ai_la_trieu_phu\obj\Debug\ai_la_trieu_phu.Views.form_rule.resources
+D:\project_dotNet\ai_la_trieu_phu\ai_la_trieu_phu\obj\Debug\ai_la_trieu_phu.Views.form_input_name.resources
+D:\project_dotNet\ai_la_trieu_phu\ai_la_trieu_phu\obj\Debug\ai_la_trieu_phu.Views.form_ranking.resources
+D:\project_dotNet\ai_la_trieu_phu\ai_la_trieu_phu\obj\Debug\ai_la_trieu_phu.Views.form_setting.resources
+D:\project_dotNet\ai_la_trieu_phu\ai_la_trieu_phu\bin\Debug\Assets\File\questions.txt

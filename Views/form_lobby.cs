@@ -63,5 +63,11 @@ namespace ai_la_trieu_phu
         {
             SoundManager.playBackgroundSound();
         }
+
+        private void btnLoadQuestion_Click(object sender, EventArgs e)
+        {
+            gameEngine.importDataFromFile();
+            gameEngine.questionRepository.checkQuestionList();
+        }
     }
 }
